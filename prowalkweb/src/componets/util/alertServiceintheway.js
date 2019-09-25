@@ -30,7 +30,7 @@ export default class App extends React.Component {
     showConfirm() {
         mobiscroll.confirm({
             title: 'Please Rate your Walker',
-            message: 'How did you like the service?',
+            message: 'How did you like the serviceeeeeeee?',
             okText: 'Agree',
             cancelText: 'Disagree',
 

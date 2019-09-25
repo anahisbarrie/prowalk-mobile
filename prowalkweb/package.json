@@ -9,6 +9,7 @@
     "clsx": "^1.0.4",
     "pretty-ms": "^5.0.0",
     "react": "^16.9.0",
+    "react-bootstrap-buttons": "^1.0.0",
     "react-confirm-alert": "^2.4.1",
     "react-dom": "^16.9.0",
     "react-google-maps": "^9.4.5",
