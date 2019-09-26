@@ -7,6 +7,7 @@ import walkerData from '../../data/walkerInfo/affiliatesInfo';
 import AlertService from '../../componets/util/alertServiceintheway';
 import Rating from '../../componets/util/rating';
 import Timer from '../../componets/util/timer';
+import Layout from '../../componets/util/Layout';
 
 
 
@@ -16,8 +17,10 @@ export default class WalkerPage extends Component {
     state={
         showline: false, 
         selectedAffiliate: {},
-        userposition: {}
+        userposition: {},
+        showRating: false
     }
+
     componentDidMount(){
         console.log(window.location.pathname)
         var pathname = window.location.pathname
@@ -57,19 +60,18 @@ export default class WalkerPage extends Component {
             showline: true
         }, 
 
-        () => {
-            alert('GET READY FOR YOUR SERVICE, YOUR WALKER WILL ARRIVE IN 20 MIN!')
-        }
-        
-        )
-
-
+        () => { alert('GET READY FOR YOUR SERVICE, YOUR WALKER WILL ARRIVE IN 20 MIN!')})
     }
 
-
+    handleFinishService = () => {
+        console.log('hey')
+        this.setState({ showRating: true })
+    }
 
     render() {
         return (
+            <Layout>
+
             <div>
                 <div>
                 <h1>WALKER PAGE</h1>
@@ -84,30 +86,27 @@ export default class WalkerPage extends Component {
                 
                 </div>
                 <div>
-                    <Map
-                    showline = {this.state.showline}
-                       latitude= {this.state.userposition.latitude}
-                        longitude={this.state.userposition.longitude}
-                        affiliateslatitude={this.state.selectedAffiliate.latitude}
-                        affiliateslongitude={this.state.selectedAffiliate.longitude}
-                    />
+                        {this.state.showRating ? <Rating /> : 
+                        <Map
+                            showline = {this.state.showline}
+                            latitude= {this.state.userposition.latitude}
+                            longitude={this.state.userposition.longitude}
+                            affiliateslatitude={this.state.selectedAffiliate.latitude}
+                            affiliateslongitude={this.state.selectedAffiliate.longitude}
+                        /> 
+                    }
                 </div>
                 
                 <div>
-                    <AlertService
-                        alert= {() => 
-                        this.showline()
-                        
-                        } />
+                        <AlertService onFinishService={this.handleFinishService} alert= {() => this.showline()} /> 
                 </div>
-                <div>
-                    <Rating />
-                </div>
+
                 <div>
                     <Timer />
                 </div>
                 
             </div>
+        </Layout>
 
         );
     }

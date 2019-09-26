@@ -8,6 +8,7 @@ import {
     geocodeByPlaceId,
     getLatLng,
 } from 'react-places-autocomplete';
+import Layout from '../../componets/util/Layout';
 
 export default class HomePage extends Component {
     constructor() {
@@ -92,27 +93,28 @@ export default class HomePage extends Component {
 
     render() {
         return (
-            <div>
-                <h1>HOME PAGE</h1>
+            <Layout>
+                <div>
+                    <h1>HOME PAGE</h1>
 
-                <Search
-                    value={this.state.address}
-                    onChange={this.handleChange}
-                    onSelect={this.handleSelect}
-                    // onUserLocationInput={this.handleUserLocationInput} 
-                    onCurrentUserLocation={this.handleCurrentUserLocation}
-                />
-
-                <div className="map">
-                    <Map
-                        location={this.state.location}
-                        showMarkers={this.state.showMarkers}
-                        // affiliatesObject={this.state.affiliatesObject}
-                    // defaultCenter={{ lat: this.state.location.latitude, lng: this.state.location.longitude}}
+                    <Search
+                        value={this.state.address}
+                        onChange={this.handleChange}
+                        onSelect={this.handleSelect}
+                        // onUserLocationInput={this.handleUserLocationInput} 
+                        onCurrentUserLocation={this.handleCurrentUserLocation}
                     />
-                </div>
-            </div>
 
+                    <div className="map">
+                        <Map
+                            location={this.state.location}
+                            showMarkers={this.state.showMarkers}
+                            // affiliatesObject={this.state.affiliatesObject}
+                            // defaultCenter={{ lat: this.state.location.latitude, lng: this.state.location.longitude}}
+                            />
+                    </div>
+                </div>
+            </Layout>
         );
     }
 }
