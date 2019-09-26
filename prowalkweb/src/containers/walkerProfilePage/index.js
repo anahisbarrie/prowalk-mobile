@@ -14,28 +14,29 @@ import Layout from '../../componets/util/Layout';
 
 
 export default class WalkerPage extends Component {
-    state={
-        showline: false, 
+    state = {
+        showline: false,
         selectedAffiliate: {},
         userposition: {},
-        showRating: false
+        showRating: false,
+        showbuttons: true
     }
 
-    componentDidMount(){
+    componentDidMount() {
         console.log(window.location.pathname)
         var pathname = window.location.pathname
-        var id = pathname.split("/")[pathname.split("/").length-1]
+        var id = pathname.split("/")[pathname.split("/").length - 1]
         console.log("id", id);
-        console.log("walker data", walkerData )
+        console.log("walker data", walkerData)
         var selectedAffiliate = {}
         walkerData.affiliates.forEach(e => {
             // you should use 2 equal signes when trying to compare a string with integer
             console.log('e', e)
-            if (e.id == id){
-                selectedAffiliate= e
+            if (e.id == id) {
+                selectedAffiliate = e
             }
         })
-        
+
         let userposition = JSON.parse(localStorage.getItem('position'))
 
 
@@ -55,58 +56,67 @@ export default class WalkerPage extends Component {
         console.log('selectedAffiliate', selectedAffiliate)
     }
 
-    showline= () => {
+    showline = () => {
         this.setState({
-            showline: true
-        }, 
+            showline: true,
+           
+        },
 
-        () => { alert('GET READY FOR YOUR SERVICE, YOUR WALKER WILL ARRIVE IN 20 MIN!')})
+            () => { alert('GET READY FOR YOUR SERVICE, YOUR WALKER WILL ARRIVE IN 20 MIN!') })
     }
 
     handleFinishService = () => {
         console.log('hey')
-        this.setState({ showRating: true })
+        this.setState({ showRating: true, showbuttons:false })
     }
 
     render() {
         return (
             <Layout>
 
-            <div>
                 <div>
-                <h1>WALKER PAGE</h1>
-                
-                <WalkerProfile 
-                pictureprofile={this.state.pictureprofile}
-                namexyz= {this.state.name}
-                ocuppationxyz={this.state.occupation}
-                city={this.state.city}
-                description={this.state.description}
-                />
-                
-                </div>
-                <div>
-                        {this.state.showRating ? <Rating /> : 
-                        <Map
-                            showline = {this.state.showline}
-                            latitude= {this.state.userposition.latitude}
-                            longitude={this.state.userposition.longitude}
-                            affiliateslatitude={this.state.selectedAffiliate.latitude}
-                            affiliateslongitude={this.state.selectedAffiliate.longitude}
-                        /> 
-                    }
-                </div>
-                
-                <div>
-                        <AlertService onFinishService={this.handleFinishService} alert= {() => this.showline()} /> 
-                </div>
+                    <div>
+                        <h1>WALKER PAGE</h1>
 
-                <div>
+                        <WalkerProfile
+                            pictureprofile={this.state.pictureprofile}
+                            namexyz={this.state.name}
+                            ocuppationxyz={this.state.occupation}
+                            city={this.state.city}
+                            description={this.state.description}
+                        />
+
+                    </div>
+                    <div>
+                        {this.state.showRating ? <Rating /> :
+                            <Map
+                                showline={this.state.showline}
+                                latitude={this.state.userposition.latitude}
+                                longitude={this.state.userposition.longitude}
+                                affiliateslatitude={this.state.selectedAffiliate.latitude}
+                                affiliateslongitude={this.state.selectedAffiliate.longitude}
+                            />
+                        }
+                    </div>
+
+                    <div>
+
+
+                        {
+                            this.state.showbuttons ?
+                                <AlertService
+                                    onFinishService={this.handleFinishService}
+                                    alert={() => this.showline()} /> : null
+                        }
+
+                    </div>
+
+                    {/* <div>
                     <Timer />
                 </div>
-                
-            </div>
-        </Layout>
+                 */}
+                </div>
+            </Layout>
 
         );
     }

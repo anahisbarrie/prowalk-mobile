@@ -28,9 +28,6 @@ export default class App extends React.Component {
         });
     };
 
-
-
-
     showConfirm() {
         mobiscroll.confirm({
             title: 'Please Rate your Walker',

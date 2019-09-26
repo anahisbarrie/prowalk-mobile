@@ -36,8 +36,8 @@ export default class App extends React.Component {
                 </div>
                 <div>
                     <ButtonToolbar>
-                        <Button variant="primary" type="submit">Submit</Button>
-                
+                        {/* <Button variant="primary" type="submit">Submit</Button> */}
+                        <a className="Submitbutton" href="/finish">Submit</a>
                     </ButtonToolbar>
                 </div>
             </div>
