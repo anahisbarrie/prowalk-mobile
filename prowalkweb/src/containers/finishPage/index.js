@@ -9,7 +9,11 @@ export default class FinishPage extends React.Component {
             <div>
               
               <p>Hello</p>
+              <div>
+                
 
+              </div>
+                
             </div>
         );
     }
