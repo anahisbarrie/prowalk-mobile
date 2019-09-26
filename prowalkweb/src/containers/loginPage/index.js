@@ -4,6 +4,7 @@ import Map from '../../componets/util/map';
 import { Link } from 'react-router-dom'
 import './loginPage.css';
 import Layout from '../../componets/util/Layout';
+import { MDBBtn } from "mdbreact";
 // import DuringWalk from '../../componets/util/duringthewalk'
 
 
@@ -54,8 +55,12 @@ export default class Home extends Component {
         return(
             <Layout>
                 <div>
+                    <h1>Find a walker in your area!</h1>
                     {/* adding a login div so I can position it to the left with color gradient */}
                     <div className="login"><form onSubmit={this.handleSubmit}>
+
+                        <div className="logoDiv">proWalk</div>
+                        
                         {
                             this.state.error &&
                             <h3 data-test="error" onClick={this.dismissError}>
@@ -76,7 +81,8 @@ export default class Home extends Component {
 
                         {/* <input type="submit" value="Log In" data-test="submit" /> */}
                         <div className="submitDiv">
-                            <Link className="submitDiv2" to='/home'>SUBMIT</Link>
+                            
+                            <MDBBtn color="default" href="/home">Submit</MDBBtn>
                         </div>
 
 

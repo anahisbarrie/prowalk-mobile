@@ -1,3 +1,5 @@
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -6,6 +8,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: rgb(226, 245, 245);
+  
 }
 
 code {
@@ -19,4 +22,60 @@ code {
 
 .Submitbutton{
   background: red;
+}
+
+h1 {
+  text-align: center;
+  padding: 20px;
+  font-family: 'Mansalva', cursive;
+  
+}
+
+.logoDiv {
+  font-family: 'Mansalva', cursive;
+  font-size: 50px;
+  padding-top: 30px;
+}
+
+.searchLocationDiv {
+  float: left;
+  text-align: center;
+  height: 400px;
+  width: 300px;
+  border: 2px solid rgb(60, 219, 211);
+}
+
+.insideSearchLocationDiv {
+  padding-top: 100px;
+  
+}
+
+.walkerProfileBtnDiv {
+  width: 300px;
+  height: 1px;
+}
+
+.searchLocation {
+  font-family: 'Mansalva', cursive;
+  font-size: 30px;
+}
+
+.ratingDiv {
+  height: 300px;
+  width: 300px;
+  float: left;
+  text-align: center;
+  
+
+}
+
+.ButtonToolbar {
+  text-align: center;
+}
+
+.formDiv {
+  height: 900px;
+  width: 900px;
+  margin: 50px;
+  margin-left: 700px;
 }

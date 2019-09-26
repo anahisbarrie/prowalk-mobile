@@ -46,7 +46,7 @@ export default class App extends React.Component {
 
     render() {
         return (
-            <div className='container'>
+            <div className='walkerProfileBtnDiv'>
                 <MDBBtn className="booking-btn" color="default" onClick={this.submit}>Book Now</MDBBtn>
                 <mobiscroll.Form>
                     <mobiscroll.FormGroup>
