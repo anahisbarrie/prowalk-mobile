@@ -1,5 +1,6 @@
 import React from 'react';
 import PlacesAutocomplete from 'react-places-autocomplete';
+import { MDBBtn } from "mdbreact";
 
 export default class LocationSearchInput extends React.Component {
     constructor(props) {
@@ -16,14 +17,17 @@ export default class LocationSearchInput extends React.Component {
                 onSelect={this.props.onSelect}
             >
                 {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
-                    <div>
-                        <div>
-                            <p>Search for Service Location</p>
+                    <div className="searchLocationDiv">
+
+                        <div className="insideSearchLocationDiv">
+
+                        <div className="searchLocation">
+                            <p>Search Location</p>
                         </div>
 
-                        <input
+                        <input 
                             {...getInputProps({
-                                placeholder: 'Search Places ...',
+                                placeholder: 'Search Places',
                                 className: 'location-search-input',
                             })}
                         />
@@ -50,9 +54,11 @@ export default class LocationSearchInput extends React.Component {
                                 );
                             })}
                         </div>
-                        <p>Or select your current location</p>
-                        <button onClick={this.props.onCurrentUserLocation}>Current Location</button>
+                        
+                        <MDBBtn className="booking-btn" color="default" onClick={this.props.onCurrentUserLocation}>Current Location</MDBBtn>
                         <div>
+                        </div>
+
                         </div>
                     </div>
                 )}

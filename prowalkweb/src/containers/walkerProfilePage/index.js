@@ -76,18 +76,31 @@ export default class WalkerPage extends Component {
 
                 <div>
                     <div>
-                        <h1>WALKER PAGE</h1>
+                        <h1>Service in progress!</h1>
 
-                        <WalkerProfile
-                            pictureprofile={this.state.pictureprofile}
-                            namexyz={this.state.name}
-                            ocuppationxyz={this.state.occupation}
-                            city={this.state.city}
-                            description={this.state.description}
-                        />
-
+                        
+                            <WalkerProfile
+                                pictureprofile={this.state.pictureprofile}
+                                namexyz={this.state.name}
+                                ocuppationxyz={this.state.occupation}
+                                city={this.state.city}
+                                description={this.state.description}
+                            />
                     </div>
                     <div>
+
+
+                    {
+                        this.state.showbuttons ?
+                            <AlertService
+                                onFinishService={this.handleFinishService}
+                                alert={() => this.showline()} /> : null
+                    }
+
+                    </div>
+
+                    
+                    <div className="ratingDiv">
                         {this.state.showRating ? <Rating /> :
                             <Map
                                 showline={this.state.showline}
@@ -99,17 +112,8 @@ export default class WalkerPage extends Component {
                         }
                     </div>
 
-                    <div>
 
 
-                        {
-                            this.state.showbuttons ?
-                                <AlertService
-                                    onFinishService={this.handleFinishService}
-                                    alert={() => this.showline()} /> : null
-                        }
-
-                    </div>
 
                     {/* <div>
                     <Timer />

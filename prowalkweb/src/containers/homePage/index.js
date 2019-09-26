@@ -95,7 +95,7 @@ export default class HomePage extends Component {
         return (
             <Layout>
                 <div>
-                    <h1>HOME PAGE</h1>
+                    <h1>Add your desired service location!</h1>
 
                     <Search
                         value={this.state.address}
