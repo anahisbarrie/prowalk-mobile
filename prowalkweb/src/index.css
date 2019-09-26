@@ -77,5 +77,6 @@ h1 {
   height: 900px;
   width: 900px;
   margin: 50px;
-  margin-left: 700px;
+  text-align: center;
+  display: inline-block;
 }

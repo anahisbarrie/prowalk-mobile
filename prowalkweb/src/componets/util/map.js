@@ -22,17 +22,18 @@ export default function Map(props) {
 
                     <Marker
                         //     options={{ style: { width: 50, height: 50, borderRadius: 2, }}} 
-                        icon={{ url: affiliate.pictureProfile, anchor: { x: 10, y: 10 }, scaledSize: { width: 40, height: 30 }, borderRadius: 50 }}
+                        icon={{ url: affiliate.pictureProfile, anchor: { x: 10, y: 10 }, scaledSize: { width: 40, height: 30 }, borderRadius: 80 }}
                         onClick={() => {
 
                             window.location.href = "/walker/" + affiliate.id;
                         }}
                         key={affiliate.id}
                         position={{ lat: affiliate.latitude, lng: affiliate.longitude }}
+                        className="icon"
 
-                    />
-                )
-            }
+        />
+    )
+}
             {
                 showline &&
                 <Addressline location={{ lat: props.latitude, lng: props.longitude }}
