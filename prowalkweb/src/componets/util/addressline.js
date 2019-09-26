@@ -21,6 +21,7 @@ export default compose(
         componentDidMount() {
             console.log(this.props)
             const DirectionsService = new google.maps.DirectionsService();
+            
 
             DirectionsService.route({
                 origin: this.props.affiliate,
@@ -42,7 +43,10 @@ export default compose(
     //     defaultZoom={7}
     //     defaultCenter={new google.maps.LatLng(41.8507300, -87.6512600)}
     // >
-        <DirectionsRenderer directions={props.directions}/>
+        { 
+            console.log(props.directions)
+            return<DirectionsRenderer directions={props.directions}/>}
+        
     // </GoogleMap>
 );
 

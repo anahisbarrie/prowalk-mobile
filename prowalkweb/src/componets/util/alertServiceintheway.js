@@ -2,6 +2,7 @@ import React from 'react';
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 import mobiscroll from '@mobiscroll/react-lite';
+import { MDBBtn } from "mdbreact";
 
 
 mobiscroll.settings = {
@@ -27,10 +28,13 @@ export default class App extends React.Component {
         });
     };
 
+
+
+
     showConfirm() {
         mobiscroll.confirm({
             title: 'Please Rate your Walker',
-            message: 'How did you like the service?',
+            message: 'How did you like the serviceeeeeeee?',
             okText: 'Agree',
             cancelText: 'Disagree',
 
@@ -46,13 +50,13 @@ export default class App extends React.Component {
     render() {
         return (
             <div className='container'>
-                <button onClick={this.submit}>Book Now</button>
+                <MDBBtn className="booking-btn" color="primary" onClick={this.submit}>Book Now</MDBBtn>
                 <mobiscroll.Form>
                     <mobiscroll.FormGroup>
                         <mobiscroll.FormGroupTitle></mobiscroll.FormGroupTitle>
                         <div className="mbsc-btn-group-block">
                             {/* <mobiscroll.Button onClick={this.showAlert}>Alert</mobiscroll.Button> */}
-                            <mobiscroll.Button onClick={this.showConfirm}>Finish Service</mobiscroll.Button>
+                            <mobiscroll.Button onClick={this.props.onFinishService}>Finish Service</mobiscroll.Button>
                             {/* <mobiscroll.Button onClick={this.showPrompt}>Prompt</mobiscroll.Button> */}
                         </div>
                     </mobiscroll.FormGroup>

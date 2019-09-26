@@ -3,6 +3,7 @@ import {Component} from 'react';
 import Map from '../../componets/util/map';
 import { Link } from 'react-router-dom'
 import './loginPage.css';
+import Layout from '../../componets/util/Layout';
 // import DuringWalk from '../../componets/util/duringthewalk'
 
 
@@ -51,41 +52,44 @@ export default class Home extends Component {
 
     render() {
         return(
-            <div>
-                {/* adding a login div so I can position it to the left with color gradient */}
-                <div className="login"><form onSubmit={this.handleSubmit}>
-                    {
-                        this.state.error &&
-                        <h3 data-test="error" onClick={this.dismissError}>
-                            <button onClick={this.dismissError}>✖</button>
-                            {this.state.error}
-                        </h3>
-                    }
-
-                    {/* adding a usernameDiv so I can position it */}
-                    <div className="usernameDiv">
-                        <input className="loginInput" placeholder="username" type="text" data-test="username" value={this.state.username} onChange={this.handleUserChange} />
-                    </div>
-
-                    {/* adding a passwordDiv */}
-                    <div className="passwordDiv">
-                        <input className="passwordInput" placeholder="password" type="password" data-test="password" value={this.state.password} onChange={this.handlePassChange} />
-                    </div>
-
-                    {/* <input type="submit" value="Log In" data-test="submit" /> */}
-                    <div className="submitDiv">
-                        <Link className="submitDiv2" to='/home'>SUBMIT</Link>
-                    </div>
-
-
-                </form></div>
-                <div className="map">
-                    <Map />
-                </div>  
+            <Layout>
                 <div>
-                    {/* <DuringWalk/> */}
+                    {/* adding a login div so I can position it to the left with color gradient */}
+                    <div className="login"><form onSubmit={this.handleSubmit}>
+                        {
+                            this.state.error &&
+                            <h3 data-test="error" onClick={this.dismissError}>
+                                <button onClick={this.dismissError}>✖</button>
+                                {this.state.error}
+                            </h3>
+                        }
+
+                        {/* adding a usernameDiv so I can position it */}
+                        <div className="usernameDiv">
+                            <input className="loginInput" placeholder="username" type="text" data-test="username" value={this.state.username} onChange={this.handleUserChange} />
+                        </div>
+
+                        {/* adding a passwordDiv */}
+                        <div className="passwordDiv">
+                            <input className="passwordInput" placeholder="password" type="password" data-test="password" value={this.state.password} onChange={this.handlePassChange} />
+                        </div>
+
+                        {/* <input type="submit" value="Log In" data-test="submit" /> */}
+                        <div className="submitDiv">
+                            <Link className="submitDiv2" to='/home'>SUBMIT</Link>
+                        </div>
+
+
+                    </form></div>
+                    <div className="map">
+                        <Map />
+                    </div>
+                    <div>
+                        {/* <DuringWalk/> */}
+                    </div>
                 </div>
-            </div>
+            </Layout>
+            
 
         );
     }
