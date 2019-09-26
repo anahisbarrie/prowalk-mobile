@@ -2,7 +2,7 @@
     height: 400px;
     width: 300px;
     float: left;
-    background-image:linear-gradient(rgb(204,255,255),white) ;
+    /* background-image:linear-gradient(rgb(204,255,255),white) ; */
     text-align: center;
 }
 

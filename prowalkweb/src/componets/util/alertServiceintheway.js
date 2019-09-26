@@ -47,13 +47,13 @@ export default class App extends React.Component {
     render() {
         return (
             <div className='container'>
-                <MDBBtn className="booking-btn" color="primary" onClick={this.submit}>Book Now</MDBBtn>
+                <MDBBtn className="booking-btn" color="default" onClick={this.submit}>Book Now</MDBBtn>
                 <mobiscroll.Form>
                     <mobiscroll.FormGroup>
                         <mobiscroll.FormGroupTitle></mobiscroll.FormGroupTitle>
                         <div className="mbsc-btn-group-block">
                             {/* <mobiscroll.Button onClick={this.showAlert}>Alert</mobiscroll.Button> */}
-                            <mobiscroll.Button onClick={this.props.onFinishService}>Finish Service</mobiscroll.Button>
+                            <MDBBtn className="booking-btn" color="default" onClick={this.props.onFinishService}>Finish Service</MDBBtn>
                             {/* <mobiscroll.Button onClick={this.showPrompt}>Prompt</mobiscroll.Button> */}
                         </div>
                     </mobiscroll.FormGroup>
