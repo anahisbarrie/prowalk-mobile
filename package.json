@@ -27,5 +27,8 @@
   "bugs": {
     "url": "https://github.com/anahisbarrie/prowalk-mobile/issues"
   },
-  "homepage": "https://github.com/anahisbarrie/prowalk-mobile#readme"
+  "homepage": "https://github.com/anahisbarrie/prowalk-mobile#readme",
+  "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix prowalkweb && npm run build --prefix prowalkweb"
 }
+
+
